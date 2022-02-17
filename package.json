@@ -6,6 +6,10 @@
   },
   "type": "module",
   "devDependencies": {
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "truffle": "^5.4.33"
+  },
+  "scripts": {
+    "format": "npx prettier -w *.js"
   }
 }

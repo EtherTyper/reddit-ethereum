@@ -23,7 +23,11 @@ const api_response = await (
   ).text();
 await util.promisify(fs.writeFile)("./api.json", api_response);
 
-const source_field = JSON.parse(api_response).result[0].SourceCode.slice(1, -1);
+const api_result = JSON.parse(api_response).result[0];
+const compiler_version = api_result.CompilerVersion;
+console.log(compiler_version);
+const source_field = api_result.SourceCode.slice(1, -1);
+await util.promisify(fs.writeFile)("./compiler_version.txt", compiler_version);
 await util.promisify(fs.writeFile)("./source.json", source_field);
 
 const sources = JSON.parse(source_field).sources;
