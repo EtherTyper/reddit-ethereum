@@ -10,6 +10,7 @@
     "truffle": "^5.4.33"
   },
   "scripts": {
-    "format": "npx prettier -w *.js"
+    "format": "npx prettier -w *.js",
+    "build": "truffle compile --config truffle-config.cjs"
   }
 }
